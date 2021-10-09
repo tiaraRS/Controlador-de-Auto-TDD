@@ -59,5 +59,26 @@ describe("controlarAuto", () => {
   it("deberia girar y avanzar con el comando 'DDIIAIIDDD'", () => {
     expect(controlarAuto("DDIIAIIDDD")).toEqual("(4,1)E");
   });
-
+  //5F : permitir avance de mas de una posicion
+  it("deberia girar y avanzar con el comando 'AAA'", () => {
+    expect(controlarAuto("AAA")).toEqual("(4,3)N");
+  });
+  it("deberia girar y avanzar con el comando 'ADAIA'", () => {
+    expect(controlarAuto("ADAIA")).toEqual("(5,2)N");
+  });
+  it("deberia girar y avanzar con el comando 'AAAI'", () => {
+    expect(controlarAuto("AAAI")).toEqual("(4,3)O");
+  });
+  it("deberia girar y avanzar con el comando 'DDAAAAAA'", () => {
+    expect(controlarAuto("DDAAAAAA")).toEqual("(4,0)S");
+  });
+  it("deberia girar y avanzar con el comando 'DAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAA'", () => {
+    expect(controlarAuto("DAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAA")).toEqual("(8,0)S");
+  });
+  it("deberia girar y avanzar con el comando 'IAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA'", () => {
+    expect(controlarAuto("IAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA")).toEqual("(0,0)S");
+  });
+  it("deberia girar y avanzar con el comando 'AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA'", () => {
+    expect(controlarAuto("AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA")).toEqual("(0,8)O");
+  });
 });
