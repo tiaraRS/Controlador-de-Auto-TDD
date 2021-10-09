@@ -34,4 +34,16 @@ describe("controlarAuto", () => {
    it("deberia avanzar una posicion con el comando 'DA'", () => {
     expect(controlarAuto("DA")).toEqual("(5,0)E");
   });
+  it("deberia avanzar una posicion con el comando 'DAFDS'", () => {
+    expect(controlarAuto("DAFDS")).toEqual("(5,0)E");
+  });
+  it("deberia avanzar una posicion con el comando 'AFDSDAFDS'", () => {
+    expect(controlarAuto("AFDSDAFDS")).toEqual("(4,1)N");
+  });
+  it("deberia girar con el comando 'D'", () => {
+    expect(controlarAuto("D")).toEqual("(4,0)E");
+  });
+  it("deberia girar con el comando 'DEF'", () => {
+    expect(controlarAuto("DEF")).toEqual("(4,0)E");
+  });
 });
