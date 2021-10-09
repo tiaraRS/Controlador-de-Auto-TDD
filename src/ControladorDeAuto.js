@@ -6,10 +6,17 @@ function obtenerSiguienteOrientacion(orientacion, orientaciones){
   return siguienteOrientacion;
 }
 
-function ajustarLimitesSuperficie(coordenada,tamSuperficieInicial){
-  let coordenadaAjustada = coordenada;
-  if(coordenada<0) coordenadaAjustada = 0;
-  if(coordenadaAjustada>tamSuperficieInicial) coordenadaAjustada = tamSuperficieInicial;
+function ajustarLimiteXSuperficieX(coordenadaX,tamSuperficieInicialX){
+  let coordenadaAjustada = coordenadaX;
+  if(coordenadaX<0) coordenadaAjustada = 0;
+  if(coordenadaAjustada>tamSuperficieInicialX) coordenadaAjustada = tamSuperficieInicialX;
+  return coordenadaAjustada;
+}
+
+function ajustarLimiteYSuperficieY(coordenadaY, tamSuperficieInicialY){
+  let coordenadaAjustada = coordenadaY;
+  if(coordenadaY<0) coordenadaAjustada = 0;
+  if(coordenadaAjustada>tamSuperficieInicialY) coordenadaAjustada = tamSuperficieInicialY;
   return coordenadaAjustada;
 }
 
@@ -64,6 +71,30 @@ function obtenerSuperficieInicial(cadenaDeControlAuto){
   return cadenaSuperficieInicial;
 }
 
+function obtenerSuperficieInicialX(cadenaDeControlAuto){
+  let superficieInicialX = 8;
+  let cadenaSuperficieInicial = 8;
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
+  if(contieneSuperficieInicial(cadenaSeparada)){
+    cadenaSuperficieInicial = cadenaSeparada[0];
+    superficieInicialX = cadenaSuperficieInicial.split(",")[0]
+  }
+ return superficieInicialX;
+}
+
+function obtenerSuperficieInicialY(cadenaDeControlAuto){
+  let superficieInicialY = 8;
+  let cadenaSuperficieInicial = 8;
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
+  if(contieneSuperficieInicial(cadenaSeparada)){
+    cadenaSuperficieInicial = cadenaSeparada[0];
+    superficieInicialY = cadenaSuperficieInicial.split(",")[1]
+  }
+ return superficieInicialY;
+}
+
+
+
 function sintaxisInvalido(cadenaPosicionInicial){
   return cadenaPosicionInicial.length>2;
 }
@@ -98,9 +129,17 @@ function obtenerCadenaDeComandosAuto(cadenaDeControlAuto){
   return cadenaDeComandosAuto;
 }
 
+function posicionInicialXNoValida(posicionX,tamSuperficieInicialX){
+  return posicionX>tamSuperficieInicialX||posicionX<0;
+}
+
+function posicionInicialYNoValida(posicionY,tamSuperficieInicialY){
+  return posicionY>tamSuperficieInicialY||posicionY<0;
+}
+/*
 function posicionInicialNoValida(posicion, tamSuperficieInicial){
   return posicion>tamSuperficieInicial||posicion<0;
-}
+}*/
 
 function obtenerOrientacionInicialAuto(cadenaDeControlAuto){
   let orientacionInicial="N";
@@ -123,8 +162,10 @@ function controlarAuto(cadenaDeControlAuto) {
   let y = obtenerPosicionInicialYAuto(cadenaDeControlAuto);  
   let orientacion = obtenerOrientacionInicialAuto(cadenaDeControlAuto);
   let tamSuperficieInicial = obtenerSuperficieInicial(cadenaDeControlAuto);
-  if(y==-1000) return "error de sintaxis"
-  if(posicionInicialNoValida(x,tamSuperficieInicial) || posicionInicialNoValida(y,tamSuperficieInicial)) return "Valor no permitido: fuera de rango de superficie";    
+  let tamSuperficieInicialX =  obtenerSuperficieInicialX(cadenaDeControlAuto);//tamSuperficieInicial.split(",")[0];
+  let tamSuperficieInicialY = obtenerSuperficieInicialY(cadenaDeControlAuto);// tamSuperficieInicial.split(",")[1];
+  if(y==-1000) return "error de sintaxis"  
+  if(posicionInicialXNoValida(x,tamSuperficieInicialX) || posicionInicialYNoValida(y,tamSuperficieInicialX)) return "Valor no permitido: fuera de rango de superficie";    
   let posicionFinal = `(${x},${y})${orientacion}`;
   for(let i=0;i<cadenaDeComandosAuto.length;i++){   
     let caracter = cadenaDeComandosAuto[i];
@@ -145,8 +186,8 @@ function controlarAuto(cadenaDeControlAuto) {
       return posicionFinal;
     }
   }
-  x = ajustarLimitesSuperficie(x,tamSuperficieInicial);
-  y = ajustarLimitesSuperficie(y,tamSuperficieInicial);
+  x = ajustarLimiteXSuperficieX(x,tamSuperficieInicialX);
+  y = ajustarLimiteYSuperficieY(y,tamSuperficieInicialY);
   posicionFinal = `(${x},${y})${orientacion}`;
   return posicionFinal;
 }

@@ -115,4 +115,38 @@ describe("controlarAuto", () => {
    it("superficie del auto", () => {
     expect(controlarAuto("8/0,1N/AAAI")).toEqual("(0,4)O");
   });
+   //10F : permitir elegir tam de superficie lxa
+  it("superficie del auto", () => {
+    expect(controlarAuto("8,8/0,1N/AAAI")).toEqual("(0,4)O");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("6,5/3,3N/AAAI")).toEqual("(3,5)O");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("1,1/3,3N/AAAAAI")).toEqual("Valor no permitido: fuera de rango de superficie");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("1,1/0,0S/AAAAAIIII")).toEqual("(0,0)S");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("1,1/0,0S/AAAAAIIIIIA")).toEqual("(1,0)E");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("5,5/1,2N/IAIAIAIAA")).toEqual("(1,3)N");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("5,5/3,3E/AADAADADDA")).toEqual("(5,1)E");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("0,10/0,0E/AAAAAAAAA")).toEqual("(0,0)E");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("10,0/0,0S/AAAAAAAAA")).toEqual("(0,0)S");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("0,0/0,0E/AAAAAAAAA")).toEqual("(0,0)E");
+  });
+  it("superficie del auto", () => {
+    expect(controlarAuto("0,0/0,0E/AAAAAAAAADADA")).toEqual("(0,0)O");
+  });
 });
