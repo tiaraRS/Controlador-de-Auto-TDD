@@ -81,4 +81,5 @@ describe("controlarAuto", () => {
   it("deberia girar y avanzar con el comando 'AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA'", () => {
     expect(controlarAuto("AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA")).toEqual("(0,8)O");
   });
+
 });

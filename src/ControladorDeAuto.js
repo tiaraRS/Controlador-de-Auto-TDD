@@ -1,18 +1,20 @@
 
-function obtenerSiguienteOrientacionIzq(orientacion){
-  let orientaciones = ['N','O','S','E'];
+function obtenerSiguienteOrientacion(orientacion, orientaciones){
   let siguienteOrientacion = orientacion;
-  if(orientacion=="E") siguienteOrientacion = "N"
+  if(orientacion==orientaciones[3]) siguienteOrientacion = orientaciones[0]
         else siguienteOrientacion = orientaciones[orientaciones.indexOf(orientacion)+1]
   return siguienteOrientacion;
 }
 
-function obtenerSiguienteOrientacionDer(orientacion){
-  let orientaciones = ['N','O','S','E']
-  let siguienteOrientacion = orientacion;
-  if(orientacion=="N") siguienteOrientacion = "E"
-        else siguienteOrientacion = orientaciones[orientaciones.indexOf(orientacion)-1];
-  return siguienteOrientacion;
+function ajustarLimitesSuperficie(coordenada){
+  let coordenadaAjustada = coordenada;
+  if(coordenada<0) coordenadaAjustada = 0;
+  if(coordenadaAjustada>8) coordenadaAjustada = 8;
+  return coordenadaAjustada;
+}
+
+function caracterNoPermitido(caracter){
+  return caracter !="I" && caracter !="A" && caracter!="D";
 }
 
 function controlarAuto(cadenaDeControlAuto) {
@@ -21,29 +23,27 @@ function controlarAuto(cadenaDeControlAuto) {
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
   for(let i=0;i<cadenaDeControlAuto.length;i++){   
-    
-    if(cadenaDeControlAuto[i]=="A") { 
+    let caracter = cadenaDeControlAuto[i];
+    if(caracter=="A") { 
       if(orientacion=="N") y++;
       if(orientacion=="O") x--;
       if(orientacion=="E") x++;
       if(orientacion=="S") y--;
     }  
-    if(cadenaDeControlAuto[i]=="I") { 
-      orientacion = obtenerSiguienteOrientacionIzq(orientacion);
+    if(caracter=="I") { 
+      orientacion = obtenerSiguienteOrientacion(orientacion, ['N','O','S','E']);
     } 
-    if(cadenaDeControlAuto[i]=="D") {       
-      orientacion = obtenerSiguienteOrientacionDer(orientacion);
+    if(caracter=="D") {       
+      orientacion = obtenerSiguienteOrientacion(orientacion, ['N','O','S','E'].reverse());
     } 
-    if(cadenaDeControlAuto[i] !="I" && cadenaDeControlAuto[i] !="A" && cadenaDeControlAuto[i]!="D") { 
+    if(caracterNoPermitido(caracter)) { 
       posicionFinal = `(${x},${y})${orientacion}`;
       return posicionFinal;
     }
    
   }
-  if(x<0) x = 0;
-  if(x>8) x = 8;
-  if(y<0) y = 0;
-  if(y>8) y = 8;
+  x = ajustarLimitesSuperficie(x);
+  y = ajustarLimitesSuperficie(y);
   posicionFinal = `(${x},${y})${orientacion}`;
   return posicionFinal;
 }
