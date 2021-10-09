@@ -91,4 +91,11 @@ describe("controlarAuto", () => {
   it(" Valor no permitido: fuera de rango de superficie'", () => {
     expect(controlarAuto("-9/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
   });
+  //7F : permitir elegir posicion inicial x y y del auto
+  it("deberia iniciar en 0,1 para el comando'0,1/AAAI'", () => {
+    expect(controlarAuto("0,1/AAAI")).toEqual("(0,4)O");
+  });
+  it("deberia dar error de sintaxis'", () => {
+    expect(controlarAuto("0,,1/AAAI")).toEqual("error de sintaxis");
+  });
 });

@@ -25,10 +25,24 @@ function obtenerPosicionInicialXAuto(cadenaDeControlAuto){
   let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
   let posicionInicialX = 4;
   if(cadenaSeparada.length>1){
-    posicionInicialX = cadenaSeparada[0];
+    posicionInicialX = cadenaSeparada[0].split(",")[0];   
   }
+  console.log("posx",posicionInicialX)
   return posicionInicialX;
 }
+
+
+function obtenerPosicionInicialYAuto(cadenaDeControlAuto){
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
+  let posicionInicialY = 0;
+  if(cadenaSeparada.length>1 && cadenaSeparada[0].split(",").length>1){
+    posicionInicialY = cadenaSeparada[0].split(",")[1];
+  }
+  console.log("s",cadenaSeparada[0].split(","))
+  if(cadenaSeparada[0].split(",").length>2) posicionInicialY = -1;
+  return posicionInicialY;
+}
+
 
 function obtenerCadenaDeComandosAuto(cadenaDeControlAuto){
   let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
@@ -44,10 +58,12 @@ function posicionInicialXNoValida(x){
 }
 
 function controlarAuto(cadenaDeControlAuto) {
-  let y = 0;
   let posicionInicial=""
   let cadenaDeComandosAuto = obtenerCadenaDeComandosAuto(cadenaDeControlAuto);
   let x = obtenerPosicionInicialXAuto(cadenaDeControlAuto);
+  let y = obtenerPosicionInicialYAuto(cadenaDeControlAuto);
+  console.log(x,y, cadenaDeComandosAuto)
+  if(y<0) return "error de sintaxis"
   if(posicionInicialXNoValida(x)) return "Valor no permitido: fuera de rango de superficie";  
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
