@@ -30,4 +30,5 @@ describe("controlarAuto", () => {
   it("deberia girar con el comando 'I'", () => {
     expect(controlarAuto("I")).toEqual("(4,0)O");
   });
+
 });

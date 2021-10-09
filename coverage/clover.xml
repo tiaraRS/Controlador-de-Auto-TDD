@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633748498930" clover="3.2.0">
-  <project timestamp="1633748498930" name="All files">
-    <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1" elements="18" coveredelements="18" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+<coverage generated="1633749221837" clover="3.2.0">
+  <project timestamp="1633749221837" name="All files">
+    <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="12" methods="2" coveredmethods="2" elements="31" coveredelements="31" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
     <file name="ControladorDeAuto.js" path="D:\UNIVERSIDAD\SEMESTRE 6\ING DE SW\PROYECTOS\Controlador de Auto TDD\parcel-jest-base\src\ControladorDeAuto.js">
-      <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-      <line num="2" count="9" type="stmt"/>
-      <line num="3" count="9" type="stmt"/>
-      <line num="4" count="9" type="stmt"/>
-      <line num="5" count="9" type="stmt"/>
-      <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="7" count="3" type="stmt"/>
-      <line num="9" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="13" count="9" type="stmt"/>
-      <line num="14" count="9" type="stmt"/>
+      <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="12" methods="2" coveredmethods="2"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="8" count="9" type="stmt"/>
+      <line num="9" count="9" type="stmt"/>
+      <line num="10" count="9" type="stmt"/>
+      <line num="11" count="9" type="stmt"/>
+      <line num="12" count="9" type="stmt"/>
+      <line num="13" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="20" count="13" type="cond" truecount="4" falsecount="0"/>
+      <line num="21" count="5" type="stmt"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="25" count="4" type="stmt"/>
+      <line num="26" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>
