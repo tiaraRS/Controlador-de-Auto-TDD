@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633750281304" clover="3.2.0">
-  <project timestamp="1633750281304" name="All files">
-    <metrics statements="23" coveredstatements="23" conditionals="19" coveredconditionals="19" methods="2" coveredmethods="2" elements="44" coveredelements="44" complexity="0" loc="23" ncloc="23" packages="1" files="1" classes="1"/>
+<coverage generated="1633750409296" clover="3.2.0">
+  <project timestamp="1633750409296" name="All files">
+    <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="2" coveredmethods="2" elements="46" coveredelements="46" complexity="0" loc="23" ncloc="23" packages="1" files="1" classes="1"/>
     <file name="ControladorDeAuto.js" path="D:\UNIVERSIDAD\SEMESTRE 6\ING DE SW\PROYECTOS\Controlador de Auto TDD\parcel-jest-base\src\ControladorDeAuto.js">
-      <metrics statements="23" coveredstatements="23" conditionals="19" coveredconditionals="19" methods="2" coveredmethods="2"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="4" count="3" type="stmt"/>
-      <line num="8" count="15" type="stmt"/>
-      <line num="9" count="15" type="stmt"/>
-      <line num="10" count="15" type="stmt"/>
-      <line num="11" count="15" type="stmt"/>
-      <line num="12" count="15" type="stmt"/>
-      <line num="13" count="15" type="stmt"/>
-      <line num="15" count="27" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="20" count="27" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="23" count="27" type="cond" truecount="2" falsecount="0"/>
-      <line num="24" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="3" type="stmt"/>
-      <line num="27" count="27" type="cond" truecount="5" falsecount="0"/>
-      <line num="28" count="8" type="stmt"/>
+      <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="2" coveredmethods="2"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="8" count="16" type="stmt"/>
+      <line num="9" count="16" type="stmt"/>
+      <line num="10" count="16" type="stmt"/>
+      <line num="11" count="16" type="stmt"/>
+      <line num="12" count="16" type="stmt"/>
+      <line num="13" count="16" type="stmt"/>
+      <line num="15" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="20" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="24" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="3" type="stmt"/>
+      <line num="28" count="32" type="cond" truecount="5" falsecount="0"/>
       <line num="29" count="8" type="stmt"/>
-      <line num="31" count="19" type="stmt"/>
-      <line num="34" count="7" type="stmt"/>
-      <line num="35" count="7" type="stmt"/>
+      <line num="30" count="8" type="stmt"/>
+      <line num="34" count="8" type="stmt"/>
+      <line num="35" count="8" type="stmt"/>
     </file>
   </project>
 </coverage>

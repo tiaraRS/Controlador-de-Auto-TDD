@@ -18,7 +18,8 @@ function controlarAuto(cadenaDeControlAuto) {
       if(orientacion=="E") x++;
     }  
     if(cadenaDeControlAuto[i]=="I") { 
-      orientacion = obtenerSiguienteOrientacion(orientacion);
+      if(orientacion=="E") {orientacion = "N"}
+        else{orientacion = obtenerSiguienteOrientacion(orientacion)}
     } 
     if(cadenaDeControlAuto[i]=="D") {       
         if(orientacion=="N") {orientacion = "E"}
@@ -28,7 +29,6 @@ function controlarAuto(cadenaDeControlAuto) {
       posicionFinal = `(${x},${y})${orientacion}`;
       return posicionFinal;
     }
-    console.log(cadenaDeControlAuto[i], orientacion)
    
   }
   posicionFinal = `(${x},${y})${orientacion}`;
