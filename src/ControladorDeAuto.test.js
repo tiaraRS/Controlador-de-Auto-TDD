@@ -98,4 +98,10 @@ describe("controlarAuto", () => {
   it("deberia dar error de sintaxis'", () => {
     expect(controlarAuto("0,,1/AAAI")).toEqual("error de sintaxis");
   });
+  it("Valor no permitido: fuera de rango de superficie y'", () => {
+    expect(controlarAuto("0,9/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
+  });
+  it("Valor no permitido: fuera de rango de superficie y", () => {
+    expect(controlarAuto("0,-5/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
+  });
 });
