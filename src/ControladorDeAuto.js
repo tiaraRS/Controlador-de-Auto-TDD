@@ -27,7 +27,7 @@ function obtenerPosicionInicialXAuto(cadenaDeControlAuto){
   if(cadenaSeparada.length>1){
     posicionInicialX = cadenaSeparada[0].split(",")[0];   
   }
-  console.log("posx",posicionInicialX)
+  //console.log("posx",posicionInicialX)
   return posicionInicialX;
 }
 
@@ -35,10 +35,14 @@ function obtenerPosicionInicialXAuto(cadenaDeControlAuto){
 function obtenerPosicionInicialYAuto(cadenaDeControlAuto){
   let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
   let posicionInicialY = 0;
-  if(cadenaSeparada.length>1 && cadenaSeparada[0].split(",").length>1){
+  if(cadenaSeparada.length>1 && cadenaSeparada[0].split(",").length>1 ){
     posicionInicialY = cadenaSeparada[0].split(",")[1];
   }
-  console.log("s",cadenaSeparada[0].split(","))
+  console.log(posicionInicialY)
+  if(posicionInicialY[posicionInicialY.length-1]=="N" || posicionInicialY[posicionInicialY.length-1]=="S"  ||posicionInicialY[posicionInicialY.length-1]=="O"   ||posicionInicialY[posicionInicialY.length-1]=="E") {
+    posicionInicialY = cadenaSeparada[0].split(",")[1][0];
+  }
+  //console.log("s",cadenaSeparada[0].split(","))
   if(cadenaSeparada[0].split(",").length>2) posicionInicialY = -1000;
   return posicionInicialY;
 }
@@ -57,14 +61,28 @@ function posicionInicialNoValida(posicion){
   return posicion>8||posicion<0;
 }
 
+function obtenerOrientacionInicialAuto(cadenaDeControlAuto){
+  let orientacionInicial="N";
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);  
+  let cadenaPosicionInicial=cadenaSeparada[0].split(",");
+  console.log("cad", cadenaPosicionInicial)
+  console.log("p",cadenaPosicionInicial[cadenaPosicionInicial.length-1] in ["N","S","E","O"])
+  if(cadenaSeparada.length>1 && cadenaPosicionInicial.length>1 && !(cadenaPosicionInicial[cadenaPosicionInicial.length-1] in ["N","S","E","O"])){
+    orientacionInicial = cadenaSeparada[0].split(",")[1][cadenaSeparada[0].split(",")[1].length-1];
+  }
+  return orientacionInicial;
+}
+
 function controlarAuto(cadenaDeControlAuto) {
   let posicionInicial=""
   let cadenaDeComandosAuto = obtenerCadenaDeComandosAuto(cadenaDeControlAuto);
   let x = obtenerPosicionInicialXAuto(cadenaDeControlAuto);
   let y = obtenerPosicionInicialYAuto(cadenaDeControlAuto);  
+  let orientacion = obtenerOrientacionInicialAuto(cadenaDeControlAuto);
+  //console.log(cadenaSeparada[0].split(",")[1])
+  console.log(x,y,orientacion);
   if(y==-1000) return "error de sintaxis"
-  if(posicionInicialNoValida(x) || posicionInicialNoValida(y)) return "Valor no permitido: fuera de rango de superficie";  
-  let orientacion = "N";
+  if(posicionInicialNoValida(x) || posicionInicialNoValida(y)) return "Valor no permitido: fuera de rango de superficie";    
   let posicionFinal = `(${x},${y})${orientacion}`;
   for(let i=0;i<cadenaDeComandosAuto.length;i++){   
     let caracter = cadenaDeComandosAuto[i];

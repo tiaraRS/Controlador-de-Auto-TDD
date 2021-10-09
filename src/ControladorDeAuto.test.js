@@ -104,4 +104,12 @@ describe("controlarAuto", () => {
   it("Valor no permitido: fuera de rango de superficie y", () => {
     expect(controlarAuto("0,-5/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
   });
+  //8F : permitira elegir orientacion inicial del auto
+   it("orientacion inicial del auto", () => {
+    expect(controlarAuto("0,1N/AAAI")).toEqual("(0,4)O");
+  });
+  it("orientacion inicial del auto", () => {
+    expect(controlarAuto("0,1O/AAAI")).toEqual("(0,1)S");
+  });
+
 });
