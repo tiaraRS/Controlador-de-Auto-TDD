@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633750409296" clover="3.2.0">
-  <project timestamp="1633750409296" name="All files">
-    <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="2" coveredmethods="2" elements="46" coveredelements="46" complexity="0" loc="23" ncloc="23" packages="1" files="1" classes="1"/>
+<coverage generated="1633750777282" clover="3.2.0">
+  <project timestamp="1633750777282" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="21" coveredconditionals="21" methods="3" coveredmethods="3" elements="52" coveredelements="52" complexity="0" loc="28" ncloc="28" packages="1" files="1" classes="1"/>
     <file name="ControladorDeAuto.js" path="D:\UNIVERSIDAD\SEMESTRE 6\ING DE SW\PROYECTOS\Controlador de Auto TDD\parcel-jest-base\src\ControladorDeAuto.js">
-      <metrics statements="23" coveredstatements="23" conditionals="21" coveredconditionals="21" methods="2" coveredmethods="2"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="4" count="6" type="stmt"/>
-      <line num="8" count="16" type="stmt"/>
-      <line num="9" count="16" type="stmt"/>
-      <line num="10" count="16" type="stmt"/>
-      <line num="11" count="16" type="stmt"/>
-      <line num="12" count="16" type="stmt"/>
-      <line num="13" count="16" type="stmt"/>
-      <line num="15" count="32" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="20" count="32" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="24" count="32" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="26" count="3" type="stmt"/>
-      <line num="28" count="32" type="cond" truecount="5" falsecount="0"/>
-      <line num="29" count="8" type="stmt"/>
-      <line num="30" count="8" type="stmt"/>
-      <line num="34" count="8" type="stmt"/>
-      <line num="35" count="8" type="stmt"/>
+      <metrics statements="28" coveredstatements="28" conditionals="21" coveredconditionals="21" methods="3" coveredmethods="3"/>
+      <line num="3" count="13" type="stmt"/>
+      <line num="4" count="13" type="stmt"/>
+      <line num="5" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="10" type="stmt"/>
+      <line num="7" count="13" type="stmt"/>
+      <line num="11" count="15" type="stmt"/>
+      <line num="12" count="15" type="stmt"/>
+      <line num="13" count="15" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="7" type="stmt"/>
+      <line num="15" count="15" type="stmt"/>
+      <line num="19" count="18" type="stmt"/>
+      <line num="20" count="18" type="stmt"/>
+      <line num="21" count="18" type="stmt"/>
+      <line num="22" count="18" type="stmt"/>
+      <line num="23" count="18" type="stmt"/>
+      <line num="25" count="48" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="48" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="13" type="stmt"/>
+      <line num="33" count="48" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="15" type="stmt"/>
+      <line num="36" count="48" type="cond" truecount="5" falsecount="0"/>
+      <line num="37" count="9" type="stmt"/>
+      <line num="38" count="9" type="stmt"/>
+      <line num="42" count="9" type="stmt"/>
+      <line num="43" count="9" type="stmt"/>
     </file>
   </project>
 </coverage>

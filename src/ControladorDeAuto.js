@@ -1,13 +1,23 @@
 
-function obtenerSiguienteOrientacion(orientacion){
+function obtenerSiguienteOrientacionIzq(orientacion){
+  let orientaciones = ['N','O','S','E'];
+  let siguienteOrientacion = orientacion;
+  if(orientacion=="E") siguienteOrientacion = "N"
+        else siguienteOrientacion = orientaciones[orientaciones.indexOf(orientacion)+1]
+  return siguienteOrientacion;
+}
+
+function obtenerSiguienteOrientacionDer(orientacion){
   let orientaciones = ['N','O','S','E']
-  return orientaciones[orientaciones.indexOf(orientacion)+1];
+  let siguienteOrientacion = orientacion;
+  if(orientacion=="N") siguienteOrientacion = "E"
+        else siguienteOrientacion = orientaciones[orientaciones.indexOf(orientacion)-1];
+  return siguienteOrientacion;
 }
 
 function controlarAuto(cadenaDeControlAuto) {
   let x = 4;
   let y = 0;
-  let orientaciones = ['N','O','S','E']
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
   for(let i=0;i<cadenaDeControlAuto.length;i++){   
@@ -18,12 +28,10 @@ function controlarAuto(cadenaDeControlAuto) {
       if(orientacion=="E") x++;
     }  
     if(cadenaDeControlAuto[i]=="I") { 
-      if(orientacion=="E") {orientacion = "N"}
-        else{orientacion = obtenerSiguienteOrientacion(orientacion)}
+      orientacion = obtenerSiguienteOrientacionIzq(orientacion);
     } 
     if(cadenaDeControlAuto[i]=="D") {       
-        if(orientacion=="N") {orientacion = "E"}
-        else{orientacion = orientaciones[orientaciones.indexOf(orientacion)-1]}
+      orientacion = obtenerSiguienteOrientacionDer(orientacion);
     } 
     if(cadenaDeControlAuto[i] !="I" && cadenaDeControlAuto[i] !="A" && cadenaDeControlAuto[i]!="D") { 
       posicionFinal = `(${x},${y})${orientacion}`;

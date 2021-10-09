@@ -53,5 +53,11 @@ describe("controlarAuto", () => {
   it("deberia girar con el comando 'IIIIA'", () => {
     expect(controlarAuto("IIIIA")).toEqual("(4,1)N");
   });
+  it("deberia girar y avanzar con el comando 'DDIIAZ'", () => {
+    expect(controlarAuto("DDIIAZ")).toEqual("(4,1)N");
+  });
+  it("deberia girar y avanzar con el comando 'DDIIAIIDDD'", () => {
+    expect(controlarAuto("DDIIAIIDDD")).toEqual("(4,1)E");
+  });
 
 });
