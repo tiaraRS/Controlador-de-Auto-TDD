@@ -111,5 +111,8 @@ describe("controlarAuto", () => {
   it("orientacion inicial del auto", () => {
     expect(controlarAuto("0,1O/AAAI")).toEqual("(0,1)S");
   });
-
+   //9F : permitir elegir tam de superficie
+   it("superficie del auto", () => {
+    expect(controlarAuto("8/0,1N/AAAI")).toEqual("(0,4)O");
+  });
 });
