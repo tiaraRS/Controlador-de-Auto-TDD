@@ -85,4 +85,7 @@ describe("controlarAuto", () => {
   it("deberia iniciar en 0,0 para el comando'0/AAAI'", () => {
     expect(controlarAuto("0/AAAI")).toEqual("(0,3)O");
   });
+  it(" Valor no permitido: fuera de rango de superficie'", () => {
+    expect(controlarAuto("9/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
+  });
 });

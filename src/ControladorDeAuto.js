@@ -28,6 +28,7 @@ function controlarAuto(cadenaDeControlAuto) {
   }
   if(posicionInicial!=""){
     x = posicionInicial;
+    if(x>8) return "Valor no permitido: fuera de rango de superficie";
   }
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
