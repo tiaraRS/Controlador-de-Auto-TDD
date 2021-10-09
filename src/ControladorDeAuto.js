@@ -17,23 +17,42 @@ function caracterNoPermitido(caracter){
   return caracter !="I" && caracter !="A" && caracter!="D";
 }
 
+function separarPartesCadenaDeControl(cadenaDeControlAuto){
+  return cadenaDeControlAuto.split("/");
+}
+
+function obtenerPosicionInicialXAuto(cadenaDeControlAuto){
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
+  let posicionInicialX = 4;
+  if(cadenaSeparada.length>1){
+    posicionInicialX = cadenaSeparada[0];
+  }
+  return posicionInicialX;
+}
+
+function obtenerCadenaDeComandosAuto(cadenaDeControlAuto){
+  let cadenaSeparada = separarPartesCadenaDeControl(cadenaDeControlAuto);
+  let cadenaDeComandosAuto = cadenaDeControlAuto;
+  if(cadenaSeparada.length>1){
+    cadenaDeComandosAuto = cadenaSeparada[1];
+  }
+  return cadenaDeComandosAuto;
+}
+
+function posicionInicialXNoValida(x){
+  return x>8||x<0;
+}
+
 function controlarAuto(cadenaDeControlAuto) {
-  let x = 4;
   let y = 0;
   let posicionInicial=""
-  let cadenaSeparada = cadenaDeControlAuto.split("/");
-  if(cadenaSeparada.length>1){
-    posicionInicial = cadenaSeparada[0];
-    cadenaDeControlAuto = cadenaSeparada[1];
-  }
-  if(posicionInicial!=""){
-    x = posicionInicial;
-    if(x>8||x<0) return "Valor no permitido: fuera de rango de superficie";
-  }
+  let cadenaDeComandosAuto = obtenerCadenaDeComandosAuto(cadenaDeControlAuto);
+  let x = obtenerPosicionInicialXAuto(cadenaDeControlAuto);
+  if(posicionInicialXNoValida(x)) return "Valor no permitido: fuera de rango de superficie";  
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
-  for(let i=0;i<cadenaDeControlAuto.length;i++){   
-    let caracter = cadenaDeControlAuto[i];
+  for(let i=0;i<cadenaDeComandosAuto.length;i++){   
+    let caracter = cadenaDeComandosAuto[i];
     if(caracter=="A") { 
       if(orientacion=="N") y++;
       if(orientacion=="O") x--;
@@ -50,7 +69,6 @@ function controlarAuto(cadenaDeControlAuto) {
       posicionFinal = `(${x},${y})${orientacion}`;
       return posicionFinal;
     }
-   
   }
   x = ajustarLimitesSuperficie(x);
   y = ajustarLimitesSuperficie(y);
