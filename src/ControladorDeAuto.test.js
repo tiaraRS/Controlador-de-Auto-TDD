@@ -30,5 +30,8 @@ describe("controlarAuto", () => {
   it("deberia girar con el comando 'I'", () => {
     expect(controlarAuto("I")).toEqual("(4,0)O");
   });
-
+   //F3 : permitir giro a derecha antes de avanzar 1 posicion
+   it("deberia avanzar una posicion con el comando 'DA'", () => {
+    expect(controlarAuto("DA")).toEqual("(5,0)E");
+  });
 });
