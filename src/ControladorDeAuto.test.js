@@ -17,4 +17,8 @@ describe("controlarAuto", () => {
   it("deberia avanzar una posicion con el comando 'ABASDFAAA'", () => {
     expect(controlarAuto("ABASDFAAA")).toEqual("(4,1)N");
   });
+  //F2 : permitir giro a izquierda antes de avanzar 1 posicion
+  it("deberia devolver (3,0)O con el comando 'IA'", () => {
+    expect(controlarAuto("IA")).toEqual("(3,0)O");
+  });
 });
