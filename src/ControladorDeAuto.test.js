@@ -21,4 +21,13 @@ describe("controlarAuto", () => {
   it("deberia devolver (3,0)O con el comando 'IA'", () => {
     expect(controlarAuto("IA")).toEqual("(3,0)O");
   });
+  it("deberia devolver (3,0)O con el comando 'IABDE'", () => {
+    expect(controlarAuto("IABDE")).toEqual("(3,0)O");
+  });
+  it("deberia quedarse en la misma posicion con el comando 'OIABDE'", () => {
+    expect(controlarAuto("OIABDE")).toEqual("(4,0)N");
+  });
+  it("deberia girar con el comando 'I'", () => {
+    expect(controlarAuto("I")).toEqual("(4,0)O");
+  });
 });
