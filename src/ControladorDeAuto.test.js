@@ -88,4 +88,7 @@ describe("controlarAuto", () => {
   it(" Valor no permitido: fuera de rango de superficie'", () => {
     expect(controlarAuto("9/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
   });
+  it(" Valor no permitido: fuera de rango de superficie'", () => {
+    expect(controlarAuto("-9/DA")).toEqual("Valor no permitido: fuera de rango de superficie");
+  });
 });
