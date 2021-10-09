@@ -20,6 +20,15 @@ function caracterNoPermitido(caracter){
 function controlarAuto(cadenaDeControlAuto) {
   let x = 4;
   let y = 0;
+  let posicionInicial=""
+  let cadenaSeparada = cadenaDeControlAuto.split("/");
+  if(cadenaSeparada.length>1){
+    posicionInicial = cadenaSeparada[0];
+    cadenaDeControlAuto = cadenaSeparada[1];
+  }
+  if(posicionInicial!=""){
+    x = posicionInicial;
+  }
   let orientacion = "N";
   let posicionFinal = `(${x},${y})${orientacion}`;
   for(let i=0;i<cadenaDeControlAuto.length;i++){   

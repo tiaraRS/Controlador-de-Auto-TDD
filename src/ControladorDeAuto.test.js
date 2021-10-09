@@ -81,5 +81,8 @@ describe("controlarAuto", () => {
   it("deberia girar y avanzar con el comando 'AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA'", () => {
     expect(controlarAuto("AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA")).toEqual("(0,8)O");
   });
-
+  //6F : permitir elegir posicion inicial x del auto
+  it("deberia iniciar en 0,0 para el comando'0/AAAI'", () => {
+    expect(controlarAuto("0/AAAI")).toEqual("(0,3)O");
+  });
 });
