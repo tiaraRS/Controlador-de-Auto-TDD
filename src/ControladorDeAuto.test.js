@@ -46,4 +46,9 @@ describe("controlarAuto", () => {
   it("deberia girar con el comando 'DEF'", () => {
     expect(controlarAuto("DEF")).toEqual("(4,0)E");
   });
+  //F4 : permitir varios giros antes de avanzar una posicion
+  it("deberia girar con el comando 'DDDD'", () => {
+    expect(controlarAuto("DDDD")).toEqual("(4,0)N");
+  });
+
 });
